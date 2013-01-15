@@ -1,25 +1,15 @@
-<h1>Listing tweets</h1>
-
-<table>
-  <tr>
-    <th>Tweet</th>
-    <th>Autor</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Tweets</h1>
+<%= link_to 'New Tweet', new_tweet_path, class: "btn btn-primary pull-right" %>
 <% @tweets.each do |tweet| %>
-  <tr>
-    <td><%= tweet.tweet %></td>
-    <td><%= tweet.autor_id %></td>
-    <td><%= link_to 'Show', tweet %></td>
-    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-    <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="well">
+    <%= tweet.tweet %>
+    <div>
+      <%= tweet.author.email %>
+      <%= time_ago_in_words tweet.created_at %>
+      ago
+    </div>  
+  </div>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Tweet', new_tweet_path %>
+
