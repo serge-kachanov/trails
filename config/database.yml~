@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: twitter_development
+  database: blogg_development
   pool: 5
   username: postgres
   password: postgres
@@ -43,7 +43,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: twitter_test
+  database: blogg_test
   pool: 5
   username: postgres
   password: postgres
@@ -53,7 +53,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: twitter_production
+  database: blogg_production
   pool: 5
   username: postgres
   password: postgres
