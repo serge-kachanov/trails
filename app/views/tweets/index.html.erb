@@ -1,8 +1,8 @@
 <% @tweets.each do |tweet| %>
   <div class="well">
-    <%= tweet.tweet %>
+    <h4> <%= tweet.tweet %> </h4>
     <div>
-      <%= tweet.author.email %>
+      <%= link_to tweet.author.name, profile_path(tweet.author) %>
       <%= time_ago_in_words tweet.created_at %>
       ago
     </div>  

@@ -11,7 +11,7 @@
         <ul class="nav">
           <li><%= link_to "Timeline", tweets_path %></li>
           <li><%= link_to "Me", profile_path(current_user.id) %></li>
-          <li><%= link_to 'New Tweet', new_tweet_path %></li>
+          <li><%= link_to 'People', profiles_path %></li>
         </ul>
         <ul class="nav pull-right">
           <% if current_user %>

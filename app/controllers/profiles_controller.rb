@@ -3,6 +3,10 @@ class ProfilesController < ApplicationController
     @profile = User.find(params[:id])
     @tweets = @profile.tweets.order("id DESC").limit(20)
   end
+
+  def index
+    @profiles = User.all
+  end
 end
 
 
