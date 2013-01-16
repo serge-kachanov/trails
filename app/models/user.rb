@@ -14,4 +14,11 @@ class User < ActiveRecord::Base
   def already_follow? profile
     Following.where(from_id: self.id, to_id: profile.id).count > 0 
   end
+
+  def authorized_tweets
+    ids = []
+    ids << self.id
+    ids << Following.where(from_id: self.id).map{ |f| f.to_id }
+    Tweet.where(autor_id: ids).order("id DESC")
+  end
 end

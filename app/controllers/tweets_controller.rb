@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.order("id DESC")
+    @tweets = current_user.authorized_tweets.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
