@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :tweets, foreign_key: "autor_id"
   validates :name, :presence => true
+    
+  def already_follow? profile
+    Following.where(from_id: self.id, to_id: profile.id).count > 0 
+  end
 end

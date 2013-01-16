@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115125702) do
+ActiveRecord::Schema.define(:version => 20130116114944) do
+
+  create_table "followings", :force => true do |t|
+    t.integer  "from_id"
+    t.integer  "to_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tweets", :force => true do |t|
     t.string   "tweet"
