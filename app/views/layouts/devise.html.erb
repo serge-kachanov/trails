@@ -7,18 +7,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render "layouts/nav" %>
     <div class="content">
       <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="well">
-              <% @tweet = Tweet.new %>
-              <%= render "tweets/form" %>
-            </div>
-          </div>
-          <div class="span8"><%= yield %></div> 
-        </div>
+        <%= yield %>
       </div>
     </body>
   </html>
