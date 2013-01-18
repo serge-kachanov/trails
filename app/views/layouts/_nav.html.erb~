@@ -1,9 +1,13 @@
 <div class="navbar navbar-static-top">
   <div class="navbar-inner">
     <div class="container-fluid">
-      
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
       <a class="brand" href="#">Tweets</a>
-     
+      <div class="nav-collapse">
         <ul class="nav">
           <li><%= link_to "Timeline", tweets_path %></li>
           <li><%= link_to "Me", profile_path(current_user.id) %></li>
