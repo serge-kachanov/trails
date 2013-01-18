@@ -17,7 +17,7 @@
               <%= render "tweets/form" %>
             </div>
           </div>
-          <div class="span7"><%= yield %></div> 
+          <div class="span8"><%= yield %></div> 
         </div>
       </div>
     </body>

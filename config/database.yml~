@@ -15,10 +15,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blogg_development
+  database: twitter_development
   pool: 5
-  username: postgres
-  password: postgres
+  username: sam
+  password: 
   host: localhost
   port: 5432
 
@@ -43,20 +43,20 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: blogg_test
+  database: twitter_test
   pool: 5
-  username: postgres
-  password: postgres
+  username: sam
+  password: 
   host: localhost
   port: 5432
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: blogg_production
+  database: twitter_production
   pool: 5
-  username: postgres
-  password: postgres
+  username: sam
+  password: 
   host: localhost
   port: 5432
 
