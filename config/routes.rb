@@ -1,5 +1,10 @@
 Twitter::Application.routes.draw do
-  resources :tweets
+  resources :tweets do
+    member do
+      post :retweet
+    end
+  end
+    
   resources :profiles do 
     member do 
       post :follow  

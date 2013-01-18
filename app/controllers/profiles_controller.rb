@@ -26,6 +26,6 @@ class ProfilesController < ApplicationController
     @following.save
     redirect_to profile_path(@profile)
   end
-end
+end 
 
 

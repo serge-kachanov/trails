@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
   end
 
   # GET /tweets/new
-  # GET /tweets/new.json
+  # G\ET /tweets/new.json
   def new
     @tweet = Tweet.new
 
@@ -82,4 +82,14 @@ class TweetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+ 
+  def retweet
+    @tweet = Tweet.find(params[:id])
+    @retweet = Retweet.new
+    @retweet.tweet_id = @tweet.id
+    @retweet.user_id = current_user.id 
+    @retweet.save 
+    redirect_to root_path
+  end
+
 end
