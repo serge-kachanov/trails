@@ -4,21 +4,24 @@
     <%= link_to "Follow", follow_profile_path(@profile), class: "btn btn-primary", method: "post" %>
   <% end %>
 </p>
-<h2> Following <h2>
+<h4> Following <h4>
 
     <h5>      
     <% @following.each do |follow| %>
-      <%= User.find(follow.to_id).name %>
-      <%= follow.created_at %>
+      <%= link_to User.find(follow.to_id).name, profile_path %>
+          
     <% end %>
     </h5>
 <h3> Recent tweets </h3>
 <% @tweets.each do |tweet| %>
   <div class="well">
-    <%= tweet.tweet %>
+    <h4> <%= tweet.tweet %> </h4>
     <div>
-      <%= tweet.author.email %>
-      <%= time_ago_in_words tweet.created_at %>
+      <% if !tweet.already_retweeted?(current_user) %>
+        <%= link_to "Retweet", retweet_tweet_path(tweet), method: "post", :class => "pull-right" %>
+      <% end %>
+      <%= link_to tweet.author.name, profile_path(tweet.author) %>
+      <%= link_to time_ago_in_words tweet.created_at, tweet_path(tweet) %>
       ago
     </div>  
   </div>

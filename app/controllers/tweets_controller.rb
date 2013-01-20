@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
   end
 
   # GET /tweets/new
-  # G\ET /tweets/new.json
+  # GET /tweets/new.json
   def new
     @tweet = Tweet.new
 
