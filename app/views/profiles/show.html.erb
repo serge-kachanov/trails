@@ -7,10 +7,7 @@
 <h4> Following <h4>
 
     <h5>      
-    <% @following.each do |follow| %>
-      <%= link_to User.find(follow.to_id).name, profile_path %>
-          
-    <% end %>
+      <%= @following.map { |follow| link_to(User.find(follow.to_id).name, profile_path) }.join(", ").html_safe %>         
     </h5>
 <h3> Recent tweets </h3>
 <% @tweets.each do |tweet| %>
