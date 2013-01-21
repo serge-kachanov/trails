@@ -13,8 +13,7 @@
         <div class="row-fluid">
           <div class="span5">
             <div class="well">
-              <% @tweet = Tweet.new %>
-              <%= render "tweets/form" %>
+              <%= render "tweets/form", tweet: Tweet.new %>
             </div>
           </div>
           <div class="span7"><%= yield %></div> 

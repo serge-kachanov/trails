@@ -23,6 +23,7 @@
       <%= link_to tweet.author.name, profile_path(tweet.author) %>
       <%= link_to time_ago_in_words(tweet.created_at), tweet_path(tweet) %>
       ago
+      <%= link_to "Reply", tweet %>
     </div>  
   </div>
 <% end %>
