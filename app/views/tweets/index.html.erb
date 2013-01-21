@@ -1,17 +1,6 @@
-<% @tweets.each do |tweet| %>
-  <div class="well">
-    <h4> <%= tweet.tweet %> </h4>
-    <div>
-      <% if !tweet.already_retweeted?(current_user) %>
-        <%= link_to "Retweet", retweet_tweet_path(tweet), method: "post", :class => "pull-right" %>
-      <% end %>
-      <%= link_to tweet.author.name, profile_path(tweet.author) %>
-      <%= link_to time_ago_in_words(tweet.created_at), tweet_path(tweet) %>
-      ago
-      <%= link_to "Reply", tweet %>
-    </div>  
-  </div>
-<% end %>
+<div class = "timeline">
+<%= render @tweets %> 
+</div>
 
 <%= paginate @tweets %>
 
